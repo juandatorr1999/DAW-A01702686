@@ -1,0 +1,82 @@
+
+*   {
+    color: darkslategray;
+    font-family: sans-serif;
+
+}
+html{
+    background: white;
+}
+h1{
+    font-family: "avenir";
+    color: darkblue;
+    font-size: 60px;
+    text-align:center;
+
+}
+h2  {
+
+    font-size: 125%;
+    text-align:center;
+}
+h3  {
+    font-size: 100%;
+}
+h4{
+    font-size: 90%;
+}
+.intro{
+    background: #87bdd8;
+}
+.definiciones{
+    background: #b7d7e8;
+}
+body{
+    style=red;
+}
+
+
+
+
+p,ul{
+    text-align: justify;
+    font-size: 100%;
+}
+
+ul  {
+    list-style-type:square;
+}
+
+
+.biblio {
+    list-style: disc;
+    text-align: left;
+    background: black
+    color:white;
+}
+a   {
+    color: white;
+}
+
+.menu {
+
+    top: 0;
+    width:100%;
+
+    padding-top: 60px;
+}
+td {
+    text-align: center;
+}
+.quest{
+    background: #cfe0e8;
+}
+.quest2{
+    background: #daebe8;
+}
+footer{
+      background: #eeffcc;
+}
+br{
+    background: black;
+}
