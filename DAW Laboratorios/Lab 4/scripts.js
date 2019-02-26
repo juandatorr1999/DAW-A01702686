@@ -1,22 +1,22 @@
 function problema1(){
 
-	let num = prompt("Ingrese el limite de numeros para desplegar cuadrados y cubos");
-    let table = document.getElementById("tabla");
+	var num = prompt("Ingrese el limite de numeros para desplegar cuadrados y cubos");
+    var table = document.getElementById("tabla");
     table.innerHTML = "";
-    let head = table.createTHead();
-    let rowh = head.insertRow(0);
-    let head1 = rowh.insertCell(0);
-    let head2 = rowh.insertCell(1);
-    let head3 = rowh.insertCell(2);
+    var head = table.createTHead();
+    var rowh = head.insertRow(0);
+    var head1 = rowh.insertCell(0);
+    var head2 = rowh.insertCell(1);
+    var head3 = rowh.insertCell(2);
     head1.innerHTML = "Numero";
     head2.innerHTML = "Cuadrado";
     head3.innerHTML = "Cubo";
-    let i = 1;
+    var i = 1;
    while (i<=num){
-        let row = table.insertRow(i);
-        let cell1 = row.insertCell(0);
-        let cell2 = row.insertCell(1);
-        let cell3 = row.insertCell(2);
+        var row = table.insertRow(i);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
         cell1.innerHTML = i;
         cell2.innerHTML = i * i;
         cell3.innerHTML = i * i * i;
@@ -26,13 +26,13 @@ function problema1(){
 
 function problema2(){
 
-    let rand1=Math.round (Math.random()*101)
-    let rand2=Math.round (Math.random()*101)
-    let result = rand1+rand2;
-    let inicio = Date.now();
-	let guess = prompt("Ingrese la suma de los numeros "+rand1+"+"+rand2);
-    let fin = Date.now();
-    let tiempo = Math.round((fin - inicio) / 1000)
+    var rand1=Math.round (Math.random()*101)
+    var rand2=Math.round (Math.random()*101)
+    var result = rand1+rand2;
+    var inicio = Date.now();
+	var guess = prompt("Ingrese la suma de los numeros "+rand1+"+"+rand2);
+    var fin = Date.now();
+    var tiempo = Math.round((fin - inicio) / 1000)
 	if (guess == result) {
 		document.getElementById("respuesta2").innerHTML =("Muy bien! Te demoraste "+tiempo+" segundos");
 	}
@@ -40,17 +40,17 @@ function problema2(){
 }
 
 function problema3(){
-	let size = prompt("Ingrese el tamaño del arreglo");
-	let arg = [];
+	var size = prompt("Ingrese el tamaño del arreglo");
+	var arg = [];
 	while (size > 0){
-		let num = prompt("Ingrese un número")
+		var num = prompt("Ingrese un número")
 		arg.push(num);
 		size--;
 	}
-	let ceros = 0;
-	let negativos = 0;
-	let positivos = 0;
-	for (let i = 0; i < arg.length; i++) {
+	var ceros = 0;
+	var negativos = 0;
+	var positivos = 0;
+	for (var i = 0; i < arg.length; i++) {
 		if (arg[i] == 0)
 			ceros++;
 		else{
@@ -60,21 +60,19 @@ function problema3(){
 				positivos++;
 		}
 	}
-	document.write("Ceros: " + ceros);
-	document.write("<br>Positivos: " + positivos);
-	document.write("<br>Negativos: " + negativos);
+	document.getElementById("respuesta3").innerHTML ="Ceros: " + ceros+ "<br>Positivos: " + positivos +"<br>Negativos: " + negativos ;
 }
 
-function script4(){
-	let filas = prompt("Ingrese número de filas");
-	let columnas = prompt("Ingrese número de columnas");
-	let matriz = [];
-	let arg = [];
-	let tmp = columnas;
-	let index = 0;
+function problema4(){
+	var filas = prompt("Ingrese número de filas");
+	var columnas = prompt("Ingrese número de columnas");
+	var matriz = [];
+	var arg = [];
+	var tmp = columnas;
+	var index = 0;
 	while (filas > 0){
 		while (columnas > 0){
-			let num = prompt("Ingrese un número")
+			var num = prompt("Ingrese un número")
 			arg.push(num);
 			columnas--;
 		}
@@ -84,49 +82,65 @@ function script4(){
 		arg = [];
 		filas--;
 	}
-	let promedios = [];
-	let mean = 0;
-	for (let i = 0; i < matriz.length; i++) {
-		for (let j = 0; j < matriz[i].length; j++) {
+	var promedios = [];
+	var mean = 0;
+	for (var i = 0; i < matriz.length; i++) {
+		for (var j = 0; j < matriz[i].length; j++) {
 			mean = mean + parseInt(matriz[i][j]);
 		}
 		mean = mean / matriz[i].length;
 		promedios.push(mean);
 		mean = 0;
 	}
-	document.write(promedios);
+	document.getElementById("respuesta4").innerHTML =promedios;
+
 }
 
-function script5(){
-	let num = prompt("Ingrese un número");
-	let inv = 0;
-	let tmp;
+function problema5(){
+	var num = prompt("Ingrese un número");
+	var inv = 0;
+	var tmp;
 	while (num > 0){
 		tmp = num % 10;
 		inv = inv * 10 + tmp;
 		num = Math.floor(num / 10);
 	}
-	document.write(inv);
+	document.getElementById("respuesta5").innerHTML =inv;
 }
 
-let car = {
-	brand: "Ferrari",
-	color: "Red",
-	readSpecs: function (){
-		return this.brand + " " + this.color;
-	},
-	modifySpecs: function (brand, color){
-		this.brand = brand;
-		this.color = color;
-	}
-};
+function problema6(){
 
-function script6(){
-	document.write(car.readSpecs());
-}
+        var accion_a = {
+            Ticker: "APPLE",
+            Precios: [12.1,12.25,12.2,12.4,12.7,12.6],
+            Rendimientos: function rend() {
+                var rendimientos = [];
+                rendimientos [0]="N/A";
+                for(i = 1; i < this.Precios.length; i++){
+                    var a = this.Precios[i] / this.Precios[i - 1] - 1;
+                    rendimientos[i] = Number(a.toFixed(4));
+                }
+                return rendimientos;
+            },
+            Promedio: function prom () {
+               var promedio1 = 0;
+                for(j = 1; j < accion_a.Rendimientos().length; j++){
+                   promedio1 = promedio1 + accion_a.Rendimientos()[j];
+               }
 
-function script7(){
-	let brand = prompt("Nueva marca");
-	let color = prompt("Nuevo color");
-	car.modifySpecs(brand,color);
+            var b = promedio1 / (accion_a.Rendimientos().length - 1);
+            promedio1 = Number(b.toFixed(4));
+            return promedio1;
+            },
+            Desviacion: function desv () {
+            var sum = 0;
+            for(h = 1; h < accion_a.Rendimientos().length; h++){
+                   sum = sum + Math.pow(accion_a.Rendimientos()[h] - this.Promedio(),2);
+               }
+            var a = sum / ((accion_a.Rendimientos().length) - 2);
+            var desvi = Number(a.toFixed(6));
+            return desvi;
+        }
+        };
+        document.getElementById("respuesta6").innerHTML = "La accion " + accion_a.Ticker + " con precios diarios de " + accion_a.Precios + " tiene rendimientos de " + accion_a.Rendimientos() + " lo que lleva a un rendimiento promedio diario de " + accion_a.Promedio() + " con una desviacion estandar diaria de " + accion_a.Desviacion();
 }

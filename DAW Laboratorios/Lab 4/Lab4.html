@@ -7,14 +7,22 @@
      <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"  media="screen,projection"/>
 
      <!--Let browser know website is optimized for mobile-->
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
      <nav>
   <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Laboratorio 7</a>
+    <a href="#" class="brand-logo">Laboratorio 4</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="#problemas">Problemas de JavaScript</a></li>
       <li><a href="preguntas">Preguntas JS</a></li>
-      <li><a href="collapsible.html">JavaScript</a></li>
+
+        <li><a href="#uno">Uno</a></li>
+        <li><a href="#dos">Dos</a></li>
+
+        <li><a href="#tres">Tres</a></li>
+        <li><a href="#cuatro">Cuatro</a></li>
+        <li><a href="#cinco">Cinco</a></li>
+        <li><a href="#seis">Seis</a></li>
     </ul>
   </div>
 </nav>
@@ -26,16 +34,77 @@
        <div class="container">
            <div class="row">
           <div class="col s4"><h3 class="center-align">Problemas</h3>
-          <h6>Problema 1</h6>
+          <h5>Problema 1</h5>
           <table id="tabla" style="width: 100%">
           </table>
       <a class="waves-effect waves-light btn" onclick="problema1()">Problema 1</a>
-      <br><br>
-      <h6>Problema 2</h6>
+
+
+      <h5>Problema 2</h5>
       <p id="respuesta2"></p>
       <a class="waves-effect waves-light btn" onclick="problema2()">Problema 2</a><br>
+
+      <h5>Problema 3</h5>
+      <p id="respuesta3"></p>
+      <a class="waves-effect waves-light btn" onclick="problema3()">Problema 3</a><br>
+
+      <h5>Problema 4</h5>
+      <p id="respuesta4"></p>
+      <a class="waves-effect waves-light btn" onclick="problema4()">Problema 4</a><br>
+
+      <h5>Problema 5</h5>
+      <p id="respuesta5"></p>
+      <a class="waves-effect waves-light btn" onclick="problema5()">Problema 5</a><br>
+
+      <h5>Problema 6</h5>
+      <p id="respuesta6"></p>
+      <a class="waves-effect waves-light btn" onclick="problema6()">Problema 6</a><br>
+
+
   </div>
           <div class="col s8"><h3 class="center-align">Preguntas</h3>
+              <h5 id="uno">¿Qué diferencias y semejanzas hay entre Java y JavaScript?</h5>
+              <h6>Diferencias</h6>
+              <ul class="collection">
+                  <li class="collection-item">JavaScript no sirve para crear aplicaciones que se sostienen por si mismas, mientras que Java sí (corren en máquinas virtuales).</li>
+                  <li class="collection-item">JavaScript es comúnmente utilizado dentro de un HTML y le da interactividad al documento, diferente a Java cuya función no es para esto.</li>
+                  <li class="collection-item">Los Plug-ins requeridos por cada uno de los lenguajes para su ejecución son diferentes.</li>
+                  <li class="collection-item">La forma de compilación y de ejecución de los códigos es diferente, lo que hace que el debugging sea diferente en cada caso.</li>
+              </ul>
+              <h6>Similitudes</h6>
+              <ul class="collection">
+                  <li class="collection-item">Tanto Java como JavaScript son lenguajes de programación.</li>
+                  <li class="collection-item">Ambos lenguajes pueden ser ejecutados en exploradores. Sin embargo, las aplicaciones de Java han ido perdiendo popularidad por este medio.</li>
+                  <li class="collection-item">Los dos lenguajes usan bibliotecas y frameworks que permiten reusar código. </li>
+                  <li class= "collection-item">[1][2]</li>
+              </ul>
+
+              <h5 id="dos">¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</h5>
+              <ul class="collection">
+                  <li class="collection-item">setTime()</li>
+                  <li class="collection-item">parse()</li>
+                  <li class="collection-item">getTimezoneOffset()</li>
+                  <li class="collection-item">getUTCDate()</li>
+                  <li class="collection-item">toDateString()</li>
+                  <li class= "collection-item">[3]</li>
+              </ul>
+
+              <h5 id="tres">¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</h5>
+              <ul class="collection">
+                  <li class="collection-item">toString()</li>
+                  <li class="collection-item">join()</li>
+                  <li class="collection-item">push() y pop()</li>
+                  <li class="collection-item">shift() y unshift()</li>
+                  <li class="collection-item">splice()</li>
+                  <li class="collection-item">space()</li>
+                  <li class= "collection-item">[4]</li>
+              </ul>
+              <h5 id="cuatro">¿Como se declara una variable con alcance local dentro de una función?</h5>
+              <p>La variable se declara de igual forma que se declara cualquier otra variable, solo que en este caso como se crea dentro de la funcion lo que hace que solo este disponible dentro de la misma.</p>
+              <h5 id="cinco">¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h5>
+              <p>Las implicaciones, a lo mejor, podrían incluir que el desarrollador vuelva a utilizar variables globales que había declarado anteriormente, cambiando su valor a sin que él se de cuenta, lo que puede conducir a un error.</p>
+              <h5 id="seis">¿Qué método de String se puede utilizar para buscar patrones con expresiones regulares?¿Para qué podrías utilizar esto en una aplicación web?</h5>
+              <p>El método .match() sirve para buscar patrones de texto dentro de un string. Éste podría ser utilizados para realizar validaciones o autenticaciones. Por ejemplo, un correo debe tener un arroba en algún lugar y, posterior a esto (utilizando otros métodos) se esperaría un dominio y la leyenda .com o dependiendo del país o la entidad.</p>
 
 
           </div>
@@ -44,9 +113,39 @@
      </div>
 
 
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-     <script type="text/javascript" src="scripts.js"></script>
-   </body>
-   <footer>
-   </footer>
+
+
+
+
+   <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Bibliografia</h5>
+                <p class="grey-text text-lighten-4"><p>[1]https://www.java.com/en/download/faq/java_javascript.xml <br> [2]https://www.electronicproducts.com/Programming/Software <br> [3]https://www.w3schools.com/jsref/jsref_obj_date.asp <br>[4]https://www.w3schools.com/js/js_array_methods.asp</p></p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://www.java.com/en/download/faq/java_javascript.xml ">[1]</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.electronicproducts.com/Programming/Software/Java_vs_JavaScript_differences_and_similarities.aspx">[2]</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.w3schools.com/jsref/jsref_obj_date.asp">[3]</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.w3schools.com/js/js_array_methods.asp">[4]</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Juan David Torres
+            <a class="grey-text text-lighten-4 right" href="https://atom.io">Atom</a>
+            </div>
+          </div>
+        </footer>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">$(document).ready(function() {
+    $('select').material_select();
+});</script>
+        <script type="text/javascript" src="scripts.js"></script>
+
+</body>
  </html>
