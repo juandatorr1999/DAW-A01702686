@@ -1,0 +1,101 @@
+
+        <div class="container">
+            <form method="POST" action="formulario_controller.php">
+                <meta charset="UTF-8"/>
+                <div>Llena los datos que se requieren a continuación:</div>
+                <small class="form-text required">*Campos Obligatorios</small>
+                <br>
+                <div class="border cuadro border-info">
+                    <div class="textocuadro">Datos personales</div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="nombre">Nombre <span class="required">*</span></label>
+                            <input placeholder="Juan" id="nombre" name="nombre" type="text" <?php if (isset($valor_nombre)) : ?> <?= $valor_nombre; ?> <?php endif; ?>>
+                            <?php if (isset($error_nombre)): ?>
+                                <div class="required">Error: <?= $error_nombre ?></div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="apellido">Apellido<span class="required">*</span></label>
+                            <input type="text" id="apellido" name="apellido" placeholder="Torres" <?php if (isset($valor_apellido)) : ?> <?= $valor_apellido; ?> <?php endif; ?>>
+                            <?php if (isset($error_apellido)): ?>
+                                <div class="required">Error: <?= $error_apellido ?></div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="correo">Correo<span class="required">*</span></label>
+                            <input type="email" id="correo" name="correo" placeholder="example@dom.com" <?php if (isset($valor_correo)) : ?> <?= $valor_correo; ?> <?php endif; ?>>
+                            <?php if (isset($error_correo)): ?>
+                                <div class="required">Error: <?= $error_correo ?></div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <div class="border cuadro border-info">
+                    <div class="textocuadro">Datos de la acción</div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="ticker">Ticker<span class="required">*</span></label>
+                            <input type="text" id="ticker" name="ticker" placeholder="Coca Cola" class="mayusculas" <?php if (isset($valor_ticker)) : ?> <?= $valor_ticker; ?> <?php endif; ?>>
+                            <?php if (isset($error_ticker)): ?>
+                                <div class="required">Error: <?= $error_ticker ?></div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="mercado">Mercado</label>
+                            <input type="text" id="mercado" name="mercado" placeholder="Mexicano" <?php if (isset($valor_mercado)) : ?> <?= $valor_mercado; ?> <?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="precios">Precios<span class="required">*</span></label>
+                            <input type="text" id="precios" name="precios" placeholder="12,12.01,11.58,11.59" <?php if (isset($valor_precios)) : ?> <?= $valor_precios; ?> <?php endif; ?>>
+                            <?php if (isset($error_precios)): ?>
+                                <div class="required">Error: <?= $error_precios ?></div>
+                            <?php endif; ?>
+                        </div>
+                        <div class = "col-3"><small class="form-text text-muted">*Los precios deben estar separados por comas</small></div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col-1"></div>
+                    <button type="submit" name="submit" class="btn btn-primary">Enviar datos</button>
+                </div>
+
+                <br>
+
+                <div class="row justify-content-center">
+                    <div class="col-5 text-center">
+                        <table class="table text-left table-hover">
+                        <?php if (isset($tabla)) : ?> <?= $tabla; ?> <?php endif; ?>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <?php if (isset($_SESSION["imagen"])): ?>
+            <img src="<?=$_SESSION["imagen"]?>" alt="Imagen de la sesion">
+             <?php endif ?>
+            <br>
+            <h4>Preguntas:</h4>
+            <h6>¿Por qué es importante hacer un session_unset() y luego un session_destroy()?</h6>
+            <p>Porque el primer comando permite que se eliminen todas las variables de la sesión y el segundo permite que se destruya la sesión.</p>
+            <h6>¿Cuál es la diferencia entre una variable de sesión y una cookie?</h6>
+            <p>La principal diferencia es que las variables de sesión son guardadas en el servidor mientras que las cookies guardan la información en el explorador del usuario.</p>
+            <h6>¿Qué técnicas se utilizan en sitios como facebook para que el usuario no sobreescriba sus fotos en el sistema de archivos cuando sube una foto con el mismo nombre?</h6>
+            <p>Este tipo de sitios les genera un id al archivo con el que se guarda. De esta manera no se sobrescribe.</p>
+            <h6>¿Qué es CSRF y cómo puede prevenirse?</h6>
+            <p>Es un tipo de ataque que hace que el usuario realice acciones que él no desea en la aplicación. Esto se hace convenciendo al usuario de seguir un patrón de acciones por mail o por chat que haga que el usuario haga cambios en su sesión que en realidad no son deseados.</p>
+        </div>

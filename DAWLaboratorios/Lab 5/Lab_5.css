@@ -1,0 +1,79 @@
+*   {
+    color: darkslategray;
+    font-family: sans-serif;
+}
+h1 {
+    color:darkblue;
+    text-align: center;
+    font-family: fantasy
+}
+h2  {
+    text-decoration: underline;
+    font-size: 125%;
+}
+p,ul{
+    text-align: justify;
+    font-size: 90%;
+}
+h5  {
+    font-size: 100%;
+}
+ul  {
+    list-style-type:square;
+}
+.biblio {
+    list-style: disc;
+    text-align: left;
+}
+a   {
+    color: blue;
+}
+.linea{
+    text-align: justify;
+    font-size: 90%;
+    display: inline
+}
+.menu {
+    position: fixed;
+    top: 0;
+    width:100%;
+    background-color: white;
+    padding-top: 60px;
+}
+td {
+    text-align: center;
+}
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: .5%;
+    font-size:90%  
+}
+img {
+    width:40%;
+}
+.imagen {
+    width:40%;
+    
+}
+.cantidad{
+    width: 30px;
+    text-align: center;
+}
+.lineatabla {
+    display: inline
+}
+.precio{
+    width: 50px;
+    text-align: center;
+    border-color: transparent;
+    font-size: 90%;
+    display: inline
+}
+.tablasinborde {
+    border-color: transparent;
+}
+.tablasinbordea {
+    border-bottom-color: transparent;
+    text-align: right;
+}

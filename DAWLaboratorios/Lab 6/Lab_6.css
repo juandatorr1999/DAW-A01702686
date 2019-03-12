@@ -1,0 +1,44 @@
+* {
+    font-family: "Arial", sans-serif;
+}
+#zapato {
+    position: absolute;
+    height: 200px;
+    z-index: -1;
+    opacity: .5;
+}
+#contenido {
+    text-align: left;
+}
+h1 {
+    text-align: center;
+}
+body {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+h2{
+    text-decoration: underline;
+}
+#ayuda {
+    position: relative;
+    top: -40px;
+    left: 40px;
+    background: black;
+    color: white;
+    visibility:hidden;
+    text-align: center;
+}
+.zapatos {
+    height: 100px;
+    display: inline;
+}
+#drop{
+    height: 110px;
+    width: 180px;
+    border: 1px solid black;
+    display: inline-block;
+}
+#margen{
+    margin: 2% 10%;
+}

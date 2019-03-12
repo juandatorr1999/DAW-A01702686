@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <title> Camilo González A01209969 </title>
+    <head> 
+        <link rel="stylesheet" type="text/css" href="Lab_6.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="utf-8">    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#ejercicios">Ejercicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#preguntas">Preguntas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#biblio">Bibliografía</a>
+                    </li>
+                </ul>
+            </div>
+    </nav>
+        <div id="margen">
+        <div class="alert alert-primary" role="alert">
+        <div class="card mb-3">
+            <img class="card-img-top" src="http://www.elexpres.com/images_news/a21ff3logotec.png" alt="Card image cap">
+            <div class="card-body">
+                <h1 class="card-title">Lab 6</h1>
+                <h1 class="card-text"><small class="text-muted"> Documentos dinámicos con JavaScript</small></h1>
+                
+            </div>
+        </div>
+        
+        </div>
+        <div>
+            <h2 id="ejercicios">Ejercicios:</h2> <br>
+            <h3>Marca de agua</h3>
+            <img id = "zapato" alt="zapato" src="zapato1.png">
+            <div id = "contenido">   
+                <br>Contenido<br>Contenido<br>Contenido<br>Contenido<br>Contenido<br>Contenido<br>Contenido<br>Contenido<br>Contenido<br>Contenido<br>Contenido<br>Contenido
+            
+            </div>
+            <br>
+            <h3>Texto cambia con evento</h3>
+            <p id = "p1">Is a method used to estimate the required YTM or price of a bond that is not traded. The method consists in using bonds with similar characteristics to estimate the yield.</p>
+            <p id = "p2">If there is no bond traded with the same maturity, a simple average between the YTMs of two bonds that mature one year after and one year before than the studied bond.</p>
+            <p id = "p3">Accrued interest can be calculated as the coupon amount times the portion of days that have passed since the last coupon payment over the total days of the coupon period.</p>
+            <div> <br>
+                <h3>Ayuda dinámica</h3>
+                <div>
+                    <p id = "p4">Is a method used to estimate the required YTM or price of a bond that is not traded. The method consists in using bonds with similar characteristics to estimate the yield.</p>
+                    <p id = "ayuda">Esto es un texto de ayuda respecto a este párrafo...</p>
+                </div>
+            </div>
+            <h3>setTimeout y setInterval</h3>
+            <p>Presiona el botón de abajo apra que se genere una alerta en cinco segundos:</p>
+            <button id="boton1" class="btn btn-dark">Presioname</button><br><br><br>
+            <h3>Drag and drop</h3>
+            <br>
+            <div id = "drop"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+             <img class = "zapatos" alt="zapato" src="zapato1.png" id = "zapatodrag1" draggable="true" ondragstart="drag(event)">
+           
+        </div>
+        <div>
+            <br>
+            <h2 id="preguntas">Preguntas:</h2>
+            <div class="card">
+                <div class="card-header">
+                    <h3>¿Cuáles son las diferencias entre los posibles valores de la propiedad position?</h3>
+                </div>
+                <div class="card-body">
+                    <p>static, absolute, fixed, relative, sticky, initial e inherit.</p>
+                </div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-header">
+                    <h3>¿Cuáles son los valores estándar para la propiedad visibility?</h3>
+                </div>
+                <div class="card-body">
+                    <p>visible, hidden, collapse, initial e inherit.</p>
+                </div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-header">
+                    <h3>¿Qué es el zIndex y para qué sirve?</h3>
+                </div>
+                <div class="card-body">
+                    <p>Esta propiedad sirve para ordenar los elementos de una página y poder definir cuál debe encontrarse en frente y cuál detrás.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 id="biblio">Referencias</h2>
+            <ul> <li>https://www.w3schools.com/cssref/pr_pos_z-index.asp</li> <li>https://www.w3schools.com/css/css_image_transparency.asp</li><li>https://www.w3schools.com/jsref/met_win_settimeout.asp</li><li>https://www.w3schools.com/jsref/met_win_setinterval.asp</li><li>https://www.w3schools.com/css/css_margin.asp</li><li>https://www.w3schools.com/js/js_events.asp</li>
+            </ul>
+        </div>
+        <script type = "text/javascript" src = "Lab_6.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        </div>
+    </body>
+</html>
+        

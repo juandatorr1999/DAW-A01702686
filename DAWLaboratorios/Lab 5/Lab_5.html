@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<title> Camilo González A01209969 </title>
+<head> 
+    <link rel="stylesheet" type="text/css" href="Lab_5.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8">    
+</head>
+    <body>
+        <article>
+            <h2>Validador de password</h2>
+            <p>Favor de ingresar su contraseña:</p>
+            <input type="password" id="pass1">
+            <p>Ingrésela nuevamente para verificarlo:</p>
+            <input type="password" id="pass2">
+            <br><input type="checkbox" id="check"> <p class="linea">Mostrar contraseñas</p>
+            <p id="mensaje"></p>
+            <button id="submit1">Enviar</button>
+       </article>
+
+        <article>
+        <h2>Tienda en línea</h2>
+        <p>A continuación se presentan los productos que tenemos disponibles en línea. Por favor elija la cantidad deseada por cada producto y presione comprar:</p>
+        <table>
+            <tr>
+                <th>Nombre de artículo</th>
+                <th>Imagen</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+            <td>Zapato RL verde</td>
+            <td class="imagen"><img src="zapato1.png" alt="Zapato 1"></td>
+                <td><input type = text class = "precio" id="precio1" value=1578.70 readonly><p class = "lineatabla"> MXN</p></td>
+            <td>
+                <button id="-1">-</button>
+                <input type="text" readonly id="cantidad1" class="cantidad" value=0>
+                <button id="+1">+</button>
+            </td>
+            <td><p id="resultado1">0.00 MXN</p></td>
+            </tr>
+            <tr>
+            <td>Zapato RL azul</td>
+            <td class="imagen"><img src="zapato2.png" alt="Zapato 2"></td>
+                <td><input type = text class = "precio" id="precio2" value=1355.85 readonly><p class = "lineatabla"> MXN</p></td>
+            <td>
+                <button id="-2">-</button>
+                <input type="text" readonly id="cantidad2" class="cantidad" value=0>
+                <button id="+2">+</button>
+            </td>
+            <td><p id="resultado2">0.00 MXN</p></td>
+            </tr>
+            <tr>
+            <td>Zapato RL gris</td>
+            <td class="imagen"><img src="zapato3.png" alt="Zapato 2"></td>
+                <td><input type = text class = "precio" id="precio3" value=1453.60 readonly><p class = "lineatabla"> MXN</p></td>
+            <td>
+                <button id="-3">-</button>
+                <input type="text" readonly id="cantidad3" class="cantidad" value=0>
+                <button id="+3">+</button>
+            </td>
+            <td><p id="resultado3">0.00 MXN</p></td>
+            </tr>
+            <tr>
+            <td class="tablasinborde"></td>
+            <td class="tablasinborde"></td>
+            <td class="tablasinborde"></td>
+            <td class="tablasinbordea">Subtotal</td>
+            <td><p id="subtotal">0.00 MXN</p></td>
+            </tr>
+            <tr>
+            <td class="tablasinborde"></td>
+            <td class="tablasinborde"></td>
+            <td class="tablasinborde"></td>
+            <td class="tablasinbordea">IVA</td>
+            <td><p id="iva">0.00 MXN</p></td>
+            </tr>
+            <tr>
+            <td class="tablasinborde"></td>
+            <td class="tablasinborde"></td>
+            <td class="tablasinborde"></td>
+            <td class="tablasinbordea">Total</td>
+            <td><p id="total">0.00 MXN</p></td>
+            </tr>
+        </table>
+        </article>
+        <article>
+            <h2>Análisis de precios de acciones</h2>
+            <form>
+                <p>Favor de ingresar los datos correspondientes a una acción.</p>
+                Ticker de la acción <input name="Ticker" type="text" id="ticker">
+                <p> Ingrese los precios de la accion separados por una coma:</p>
+                <input name="precios" type="text" id="precios">
+                <br><br>
+                
+                <p id = "respuesta"></p>
+            </form>
+            <button id = "submit">Submit</button>   
+        </article>
+    <script type = "text/javascript" src = "Lab_5.js"></script>
+    
+    <article>
+        <h2>Preguntas</h2>
+        <p>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</p>
+        <p>Es buena idea para evitar que se almacene información con errores en el servidor, pues podría traer consecuencias negativas tanto para el usuario como para el administrador.</p>
+        <p>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</p>
+        <p>Para lograr esto, el usuario puede sencillamente deshabilitar o "apagar" javascript para evitar que éste le genere obstrucciones al querer enviar un formulario</p>
+        <p>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</p>
+        <p>La validación con Javascript permite que ésta se haga de manera ágil y que sea amigable. Sin embargo, por motivos de seguridad, pueden haber problemas.</p>
+    </article>
+    </body>
+
+</html>
