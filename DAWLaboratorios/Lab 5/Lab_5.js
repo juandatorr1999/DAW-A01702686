@@ -30,8 +30,8 @@ if (x == "" || y == ""){
 function mostrar(){
 var check = document.getElementById("check");
 if (check.checked == true) {
-   document.getElementById("pass1").type ="text"; 
-     document.getElementById("pass2").type ="text"; 
+   document.getElementById("pass1").type ="text";
+     document.getElementById("pass2").type ="text";
 }
 }
 function restar1(){
@@ -131,22 +131,19 @@ function form(){
     var promedio1 = 0;
     for(j = 1; j < rendimientos.length; j++){
     promedio1 = promedio1 + rendimientos[j];
-               } 
+               }
     var b = promedio1 / (rendimientos.length - 1);
-    promedio1 = Number(b.toFixed(4));    
+    promedio1 = Number(b.toFixed(4));
 
-            
+
 
     var sum = 0;
     for(h = 1; h < rendimientos.length; h++){
     sum = sum + Math.pow(rendimientos[h] - promedio1,2);
-               } 
+               }
     var a = sum / ((rendimientos.length) - 2);
     a = Math.pow(a,0.5);
     var desvi = Number(a.toFixed(6));
 
     document.getElementById("respuesta").innerHTML = "La accion " + document.getElementById("ticker").value + " con precios diarios de " + x + " tiene rendimientos de " + rendimientos + " lo que lleva a un rendimiento promedio diario de " + promedio1 + " con una desviacion estandar diaria de " + desvi;
-
-
 }
-       
