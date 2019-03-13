@@ -1,0 +1,101 @@
+
+        <div class="container">
+            <div class="container"><div class="display-4-1">Cotizaciones al día de hoy:</div><br> </div>
+            <?= getcotizaciones() ?>
+            <meta charset="UTF-8"/>
+            <form method="POST" action="formulario_controller.php">
+                <div>Llena los datos que se requieren a continuación:</div>
+                <small class="form-text required">*Campos Obligatorios</small>
+                <br>
+                <div class="border cuadro border-info">
+                    <div class="textocuadro">Datos personales</div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="nombre">Nombre <span class="required">*</span></label>
+                            <input placeholder="Juan David" id="nombre" name="nombre" type="text" <?php if (isset($valor_nombre)) : ?> <?= $valor_nombre; ?> <?php endif; ?>>
+                            <?php if (isset($error_nombre)): ?>
+                                <div class="required">Error: <?= $error_nombre ?></div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="apellido">Apellido<span class="required">*</span></label>
+                            <input type="text" id="apellido" name="apellido" placeholder="Torres" <?php if (isset($valor_apellido)) : ?> <?= $valor_apellido; ?> <?php endif; ?>>
+                            <?php if (isset($error_apellido)): ?>
+                                <div class="required">Error: <?= $error_apellido ?></div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="correo">Correo<span class="required">*</span></label>
+                            <input type="email" id="correo" name="correo" placeholder="example@dom.com" <?php if (isset($valor_correo)) : ?> <?= $valor_correo; ?> <?php endif; ?>>
+                            <?php if (isset($error_correo)): ?>
+                                <div class="required">Error: <?= $error_correo ?></div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <div class="border cuadro border-info">
+                    <div class="textocuadro">Datos de la acción</div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="ticker">Ticker<span class="required">*</span></label>
+                            <input type="text" id="ticker" name="ticker" placeholder="Coca Cola" class="mayusculas" <?php if (isset($valor_ticker)) : ?> <?= $valor_ticker; ?> <?php endif; ?>>
+                            <?php if (isset($error_ticker)): ?>
+                                <div class="required">Error: <?= $error_ticker ?></div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="mercado">Mercado</label>
+                            <input type="text" id="mercado" name="mercado" placeholder="Mexicano" <?php if (isset($valor_mercado)) : ?> <?= $valor_mercado; ?> <?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="precios">Precios<span class="required">*</span></label>
+                            <input type="text" id="precios" name="precios" placeholder="12,12.01,11.58,11.59" <?php if (isset($valor_precios)) : ?> <?= $valor_precios; ?> <?php endif; ?>>
+                            <?php if (isset($error_precios)): ?>
+                                <div class="required">Error: <?= $error_precios ?></div>
+                            <?php endif; ?>
+                        </div>
+                        <div class = "col-3"><small class="form-text text-muted">*Los precios deben estar separados por comas</small></div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col-1"></div>
+                    <button type="submit" name="submit" class="btn btn-primary">Enviar datos</button>
+                </div>
+
+                <br>
+
+                <div class="row justify-content-center">
+                    <div class="col-5 text-center">
+                        <table class="table text-left table-hover">
+                        <?php if (isset($tabla)) : ?> <?= $tabla; ?> <?php endif; ?>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <?php if (isset($_SESSION["imagen"])): ?>
+            <img src="<?=$_SESSION["imagen"]?>" alt="Imagen de la sesion">
+             <?php endif ?>
+            <br>
+            <h4>Preguntas:</h4>
+            <h6>¿Qué es ODBC y para qué es útil?</h6>
+            <p>ODBC es un estándar para poder acceder a una base de datos desde cualquier aplicación independientemente del gestor que esta BD tenga.</p>
+            <h6>¿Qué es SQL Injection?</h6>
+            <p>Consiste en insertar código SQL en los campos de algún formulario, pudiendo alterar así, la base de datos.</p>
+            <h6>¿Qué técnicas puedes utilizar para evitar ataques de SQL Injection?</h6>
+            <p>Para evitarlo, las entradas deben ser limpiadas por el lado del servidor, tal y como se hace con el html.</p>
+        </div>
