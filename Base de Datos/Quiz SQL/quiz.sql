@@ -47,8 +47,7 @@ ORDER BY 'Entregas totales' DESC
 Select Clave, Descripcion
 From Materiales as M
 where M.clave not in(Select distinct E.Clave
-from  Entregan as E
-where M.clave=E.Clave)
+from  Entregan as E)
 
 insert into materiales values (5000,'sss',34.32)
 delete from materiales where clave=500
