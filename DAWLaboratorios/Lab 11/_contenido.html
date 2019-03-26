@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="lab11.css">
+    </head>
+    <body>
+        <div class="border-bottom"><h1 class="display-3">Lab 11: Juan David Torres</h1></div><br>
+        <div class="container">
+            <form method="POST" action="index.php">
+                <div>Llena los datos que se requieren a continuación:</div>
+                <small class="form-text required">*Campos Obligatorios</small>
+                <br>
+                <div class="border cuadro border-info">
+                    <div class="textocuadro">Datos personales</div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="nombre">Nombre <span class="required">*</span></label>
+                            <input placeholder="Juan" id="nombre" name="nombre" type="text" <?php if (isset($valor_nombre)) : ?> <?= $valor_nombre; ?> <?php endif; ?>>
+                            <?php if (isset($error_nombre)): ?>
+                                <div class="required">Error: <?= $error_nombre ?></div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="apellido">Apellido<span class="required">*</span></label>
+                            <input type="text" id="apellido" name="apellido" placeholder="Torres" <?php if (isset($valor_apellido)) : ?> <?= $valor_apellido; ?> <?php endif; ?>>
+                            <?php if (isset($error_apellido)): ?>
+                                <div class="required">Error: <?= $error_apellido ?></div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="correo">Correo<span class="required">*</span></label>
+                            <input type="email" id="correo" name="correo" placeholder="example@dom.com" <?php if (isset($valor_correo)) : ?> <?= $valor_correo; ?> <?php endif; ?>>
+                            <?php if (isset($error_correo)): ?>
+                                <div class="required">Error: <?= $error_correo ?></div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <div class="border cuadro border-info">
+                    <div class="textocuadro">Datos de la acción</div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="ticker">Ticker<span class="required">*</span></label>
+                            <input type="text" id="ticker" name="ticker" placeholder="Coca Cola" class="mayusculas" <?php if (isset($valor_ticker)) : ?> <?= $valor_ticker; ?> <?php endif; ?>>
+                            <?php if (isset($error_ticker)): ?>
+                                <div class="required">Error: <?= $error_ticker ?></div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="mercado">Mercado</label>
+                            <input type="text" id="mercado" name="mercado" placeholder="Mexicano" <?php if (isset($valor_mercado)) : ?> <?= $valor_mercado; ?> <?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 text-right">
+                            <label for="precios">Precios<span class="required">*</span></label>
+                            <input type="text" id="precios" name="precios" placeholder="12,12.01,11.58,11.59" <?php if (isset($valor_precios)) : ?> <?= $valor_precios; ?> <?php endif; ?>>
+                            <?php if (isset($error_precios)): ?>
+                                <div class="required">Error: <?= $error_precios ?></div>
+                            <?php endif; ?>
+                        </div>
+                        <div class = "col-3"><small class="form-text text-muted">*Los precios deben estar separados por comas</small></div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col-1"></div>
+                    <button type="submit" name="submit" class="btn btn-primary">Enviar datos</button>
+                </div>
+
+                <br>
+
+                <div class="row justify-content-center">
+                    <div class="col-5 text-center">
+                        <table class="table text-left table-hover">
+                        <?php if (isset($tabla)) : ?> <?= $tabla; ?> <?php endif; ?>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <h4>Preguntas:</h4>
+            <h6>¿Por qué es una buena práctica separar el controlador de la vista?</h6>
+            <p>Al separar el controlador de la vista, el código se vuelve más mantenible. Además se logra que la lógica del sitio esté separada de la estrucutra. Hay casos en que se debe involucrar la lógica directamente en el html para cuestiones de despliegue. Sin embargo, debe ser mínimo.</p>
+            <h6>Aparte de los arreglos $_POST y $_GET, ¿qué otros arreglos están predefinidos en php y cuál es su función?</h6>
+            <p>Además de éstas se encuentran _COOKIE, _FILES y _SERVER. La primera alamacena en un arreglo todas las cookies definidas. La segunda es un array de los archivos que se han subido mediante el método POST. La última, almacena diferenctes características del entorno y la ejecución por parte del servidor</p>
+            <h6>Explora las funciones de php, y describe 2 que no hayas visto en otro lenguaje y que llamen tu atención.</h6>
+            <p>htmlspecialchars() es una función de validación que no conocía y me parece bastante interesante, pues permite transformar los imputs para que estos no puedan afectar el código del sitio. setcookie() es otra funcion y sirve para determinar una cookie que se envía al servidor junto con el http request.</p>
+            <h6>¿Qué es XSS y cómo se puede prevenir?</h6>
+            <p>XSS es una manera de atacar a las aplicaciones web mediante la cual, una persona utiliza los imputs que el sitio provee o el url, para ingresar scripts que perjudiquen al sitio. Lo que buscan con esto puede ser desde modificar el contenido o redireccionar al usuario a otro sitio, hasta extraer información sensible que pudiera poner en peligro la integridad del sitio y de los demás usuarios. Existen
+            dos tipos de ataques. Los primeros son los stored attacks que básicamente son ataques que terminan siendo almacenados en una base de datos y que, cuando se usan sus registros, generan una función no esperada del sitio. Por otra parte, los reflected attacks son ataques que no se almacenan sino que simplemente se envían con la request de http. Existen distintos métodos para evitar que se den estos ataques.
+            El más común y que permite al desarrollador evitar una gran cantidad de ataques es utilizar la función de validación del lado del servidor conocida como htmlspecialchars, la cual se encarga de transformar los caracteres que son sensibles a html (como <,>,",' y &) por otra serie de caracteres que no son interpretables en un archivo de html por parte del explorador.
+            </p>
+        </div>
+        <br>
+    </body>
+</html>
