@@ -1,0 +1,8 @@
+El uso de jQuery se utiliza para cargar el DOM antes de utilizar el javascript y jquery
+Se utilizo también para abrir la vista del Login de forma simplificada
+
+
+Preguntas: 
+
+1. jQuery es una serie de librerias que ayudar al programador a no tener que volver a programar varias funciones que ya soporta JQuery. JQuery es parte de AJAX. JQuery implementa AJAX sin tener que reprogramar varias funciones. Funciona de forma asíncrona.
+2. BackboneJS, ReactJS

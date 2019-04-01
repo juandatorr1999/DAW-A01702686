@@ -1,0 +1,82 @@
+1.
+
+IF EXISTS (SELECT name FROM sysobjects
+                       WHERE name = 'creaMaterial' AND type = 'P')
+                DROP PROCEDURE creaMaterial
+            GO
+
+            CREATE PROCEDURE creaMaterial
+                @uclave NUMERIC(5,0),
+                @udescripcion VARCHAR(50),
+                @ucosto NUMERIC(8,2),
+                @uimpuesto NUMERIC(6,2)
+            AS
+                INSERT INTO Materiales VALUES(@uclave, @udescripcion, @ucosto, @uimpuesto)
+            GO
+
+ a)  El "IF" checa si el procedure que esta por agregarse ya se agregó anteriormente
+ b)  Cuando se manda un batch de SQL se utiliza el comando GO para indicar el fin de este batch
+ c)  Como parámetros recibe la Clave, Descripción, Costo e Impuesto y modifica la tabla de Materiales
+
+ 2.
+
+ IF EXISTS (SELECT name FROM sysobjects
+                                       WHERE name = 'queryMaterial' AND type = 'P')
+                                DROP PROCEDURE queryMaterial
+                            GO
+
+                            CREATE PROCEDURE queryMaterial
+                                @udescripcion VARCHAR(50),
+                                @ucosto NUMERIC(8,2)
+
+                            AS
+                                SELECT * FROM Materiales WHERE descripcion
+                                LIKE '%'+@udescripcion+'%' AND costo > @ucosto
+                            GO
+
+a)  Recibe como parámetro la Descripción y Costo de un Material y regresa los materiales con un costo mayor al dado y con una descripción igual o similar.
+
+3.
+
+IF EXISTS (SELECT name FROM sysobject WHERE name = 'agregarFruta' AND type = 'P')
+	DROP PROCEDURE agregarFruta
+	GO
+CREATE PROCEDURE agregarFruta
+	@uNombre VARCHAR(50),
+	@uCantidad int,
+	@uCosto NUMERIC(8,2),
+	@uPais VARCHAR(50)
+AS
+	INSERT INTO Fruits VALUES (@uNombre, @uCantidad, @uCosto, @uPais)
+GO
+
+
+
+
+IF EXISTS (SELECT name FROM sysobject WHERE name = 'borrarFruta' AND type = 'P')
+	DROP PROCEDURE borrarFruta
+	GO
+CREATE PROCEDURE borrarFruta
+	@uNombre VARCHAR(50)
+AS
+	DELETE Fruits WHERE nombre = @uNombre
+GO
+
+
+
+IF EXISTS (SELECT name FROM sysobject WHERE name = 'getFruta' AND type = 'P')
+	DROP PROCEDURE getFruta
+	GO
+CREATE PROCEDURE getFruta
+	@uNombre VARCHAR(50)
+AS
+	SELECT * FROM Fruits WHERE nombre = @uNombre
+GO
+
+
+
+Preguntas:
+
+a) Con SQ el cliente se comunica con el servidor adecuadamente
+b) Los Stored Procedures se pueden reutilizar en muchas ocaciones y no se tiene que escribir todo el código SQL "n" veces. Sirve como una función
+ 
